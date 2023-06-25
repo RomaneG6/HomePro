@@ -1,0 +1,41 @@
+.corps{
+    background-color: rgba(255, 255, 255, 0.842);
+    margin: 0 150px;
+}
+.corps .lart{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.linAd{
+    color: rgba(0, 54, 218, 0.864);
+    margin-left: 5px;
+}
+.corps .lart .art{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: rgba(68, 68, 68, 0.68) 1px 1px 2px;
+    background-color: rgba(212, 212, 212, 0.596);
+    margin: 20px;
+    width: 20%;
+}   
+.corps .lart :hover .art{
+    color: rgba(107, 124, 146, 0.76);
+    text-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    background-color: rgba(226, 226, 226, 0.781);
+    border: rgba(107, 124, 146, 0.76) solid 2px;
+    box-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    transition: 0.2s;
+}
+.corps .creations{
+    padding-left: 20px;
+}
+.corps img{
+    margin-top: 15px;
+    width:70%;
+}

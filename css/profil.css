@@ -1,0 +1,68 @@
+.formulairePro{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.842);
+    box-shadow: rgba(106, 114, 143, 0.842) 1px 1px 5px ;
+    padding: 10px;
+    width: 50%;
+}
+.text-center .forms{
+    font-family: 'Brush Script MT', cursive;
+    font-size: large;
+    margin-bottom: 10px;
+    color: rgb(139, 139, 139);
+    width: 280%;
+    border: none;
+    padding: 10px;
+    margin-left: -100px;
+    background-color: rgba(255, 255, 255, 0.918);
+}
+.formulairePro .text-center :hover .forms{
+    background-color: rgba(238, 238, 238, 0.856);
+    transition: 0.2s;
+}
+.flexSup{
+    display: flex;
+    justify-content: space-between;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.linDel{
+    color: rgba(198, 0, 0, 0.809);
+    width: 0.5%;
+}
+.image{
+    border-radius: 50%;
+    width: 80%;
+    margin-left: -100px;
+}
+.text-center .btn{
+    color: rgba(194, 220, 255, 0.76);
+    text-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    background-color: rgba(255, 255, 255, 0.918);
+    border: rgba(194, 220, 255, 0.76) solid 2px;
+    box-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    border-radius: 20%;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin: 5px auto;
+}
+.text-center :hover .btn{
+    color: rgba(107, 124, 146, 0.76);
+    text-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    background-color: rgba(226, 226, 226, 0.781);
+    border: rgba(107, 124, 146, 0.76) solid 2px;
+    box-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    transition: 0.2s;
+}

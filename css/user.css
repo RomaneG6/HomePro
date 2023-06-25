@@ -1,0 +1,67 @@
+.formulaireCo{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.842);
+    box-shadow: rgba(106, 114, 143, 0.842) 1px 1px 5px ;
+    padding: 10px;
+    width: 30%;
+}
+.text-center{
+    margin: 10px auto;
+}
+.text-center h1{
+    font-family: Georgia, serif;
+    font-size: large;
+    margin-bottom: 40px;
+}
+.text-center .envoie{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+.text-center .form{
+    font-family: 'Brush Script MT', cursive;
+    font-size: large;
+    margin-bottom: 10px;
+    color: rgb(139, 139, 139);
+    width: 170%;
+    border: none;
+    padding: 10px;
+    margin-left: -50px;
+    background-color: rgba(255, 255, 255, 0.918);
+}
+.text-center :hover .form{
+    background-color: rgba(238, 238, 238, 0.856);
+    transition: 0.2s;
+}
+.text-center .btnEnvoi{
+    color: rgba(194, 220, 255, 0.76);
+    text-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    background-color: rgba(255, 255, 255, 0.918);
+    border: rgba(194, 220, 255, 0.76) solid 2px;
+    box-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    border-radius: 20%;
+    cursor: pointer;
+    width: 60%;
+    padding: 10px;
+    margin: 5px auto;
+}
+.text-center :hover .btnEnvoi{
+    color: rgba(107, 124, 146, 0.76);
+    text-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    background-color: rgba(226, 226, 226, 0.781);
+    border: rgba(107, 124, 146, 0.76) solid 2px;
+    box-shadow: rgba(73, 73, 73, 0.623) 0px 0px 1px;
+    transition: 0.2s;
+}
+.text-center .btnInscr{
+    color: rgba(0, 71, 177, 0.801);
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    background: none;
+    font-size: small;
+    margin: auto;
+    margin-top: 10px;
+}
