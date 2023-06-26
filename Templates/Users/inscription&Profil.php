@@ -24,7 +24,7 @@
             <?php else : ?>
                 <div class="flexSup">
                     <div class="row">
-                        <img class="image" src="<?= $_SESSION['user']->userPP ?>" alt="imgProfil"><!-- user => voir connectUser function -->
+                        <img class="image" src="img/<?= $_SESSION['user']->userPP ?>" alt="imgProfil"><!-- user => voir connectUser function -->
                         <div class="column">
                             <h3><?= $_SESSION['user']-> userLogin ?></h3>
                             <button name="btnInscr" class="btnInscr" value="Envoyer">Modify</button>

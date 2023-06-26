@@ -3,15 +3,6 @@
     session_start();
 
     require_once "Config/connexionDB.php";
-
-    /*$query ="Select * from users";
-    $sth = $pdo->prepare($query); //$pdo car voir connexionDb.php
-    $sth->execute();
-
-    //Fetch all of the remaining rows in the result set 
-    print("Fetch all of the remaining rows in the result set:\n");
-    $result = $sth->fetchAll();
-    echo "<pre>" . print_r($result) . "</pre>";*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +27,7 @@
                 <li class=link><a href="/">Accueil</a></li>
                 <?php if (isset($_SESSION['user'])) : ?>
                     <li class=link><a href="/profil"> My profile</a></li>
+                    <li class=link><a href="/tchat"> Tchat</a></li>
                 <?php else : ?>
                     <li class=link><a href="/inscription">Inscription</a></li>
                     <li class=link><a href="/connexion">Connexion</a></li>
@@ -48,6 +40,7 @@
         <?php
             require_once "Controllers/artsController.php";
             require_once "Controllers/usersController.php";
+            require_once "Controllers/tchatsController.php";
         ?>
     </main>
             <!-- pied de page -->

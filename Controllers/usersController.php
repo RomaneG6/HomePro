@@ -33,7 +33,6 @@ elseif ($uri === "/connexion")
 }
 elseif ($uri === "/profil") 
 {
-    require_once "Templates/Users/inscription&Profil.php";
     if (isset($_POST['btnEnvoi'])) {
         session_destroy();
         header('location:/');
@@ -60,7 +59,6 @@ elseif ($uri === "/deleteProfil") {
 elseif ($uri === "/createArt") {
     $options = selectAllOptions($pdo);
     $types = selectAllTypes($pdo);
-    var_dump($options);
     require_once "Templates/Arts/edithOrCreateArt.php";
 }
 elseif ($uri === "/createOption") {
