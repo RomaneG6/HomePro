@@ -12,6 +12,20 @@ function selectAllArts($pdo){
         die($message);
     }
 }
+function selectOneArt($pdo, $artId){
+    try{
+        $query = "Select * from arts where artId = :artId";
+        $selectArt = $pdo->prepare($query);
+        $selectArt->execute([
+            'artId'=> $_GET['artId'],
+        ]);
+        $art = $selectArt -> fetch();
+        return $art;
+    }catch(PDOException $e){
+        $message = $e->getMessage();
+        die($message);
+    }
+}
 function deleteAllArtsFromUser($pdo){
     try{
         $query = "Delete from arts where userId = :userId";

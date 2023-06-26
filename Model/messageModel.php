@@ -14,15 +14,17 @@ function selectAllMessages($pdo, $tchatId){
         die($message);
     }
 }
-function addMessage($pdo, $messageDate, $messageHeure){
+function addMessage($pdo, $messageDate, $messageHeure, $tchatId, $userId){
 
     try{
-        $query = "Insert into messages (messageText, messageDate, messageHeure) values (:messageText, :messageDate, :messageHeure)";
-        $addUser = $pdo->prepare($query);
-        $addUser->execute([
-            'messageText' => $_POST['messageText'],
+        $query = "Insert into messages (messageText, messageDate, messageHeure, tchatId, userId) values (:messageText, :messageDate, :messageHeure, :tchatId, :userId)";
+        $addMessage = $pdo->prepare($query);
+        $addMessage->execute([
+            'messageText' => $_POST['message'],
             'messageDate' => $messageDate,
-            'messageHeure' => $messageHeure
+            'messageHeure' => $messageHeure,
+            'tchatId' => $tchatId,
+            'userId' => $userId
         ]);
     }catch(PDOException $e){
         $message = $e->getMessage();

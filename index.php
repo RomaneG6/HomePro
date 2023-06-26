@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/user.css">
     <link rel="stylesheet" href="css/accueil.css">
     <link rel="stylesheet" href="css/profil.css">
+    <link rel="stylesheet" href="css/tchat.css">
     <title>Draw me</title>
 </head>
 <body>

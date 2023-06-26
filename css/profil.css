@@ -31,6 +31,7 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-evenly;
+    margin-right: 50px;
 }
 .column{
     display: flex;
@@ -39,12 +40,11 @@
 }
 .linDel{
     color: rgba(198, 0, 0, 0.809);
-    width: 0.5%;
+    width: 10%;
 }
 .image{
     border-radius: 50%;
-    width: 80%;
-    margin-left: -100px;
+    width: 40%;
 }
 .text-center .btn{
     color: rgba(194, 220, 255, 0.76);

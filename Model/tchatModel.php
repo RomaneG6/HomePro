@@ -14,6 +14,20 @@ function selectAllUsersSaufConnect($pdo){
         die($message);
     }
 }
+function selectAllGrpTchats($pdo, $tchatType){
+    try{
+        $query = "Select * from tchats where tchatType = :tchatType";
+        $selectAllTchats = $pdo->prepare($query);
+        $selectAllTchats ->execute([
+            'tchatType'=> $tchatType
+        ]);
+        $tchats = $selectAllTchats -> fetchAll();
+        return $tchats;
+    }catch(PDOException $e){
+        $message = $e->getMessage();
+        die($message);
+    }
+}
 function addTchat($pdo, $tchatType){
 
     try{

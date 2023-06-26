@@ -19,7 +19,7 @@
                         <h3><span><?= $art-> artPrix?>€</span></h3>
                     </div>
                 </div>
-                <a class="linAd" href="/voirArt">voir le contenu</a>
+                <a class="linAd" href="/voirArt?artId=" . <?= $art-> artId?>>voir le contenu</a>
             </button>
         <?php endforeach ?>
     </div>
