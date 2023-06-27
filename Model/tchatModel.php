@@ -55,13 +55,28 @@ function addUsersTchat($pdo, $tchatId, $userId){
         die($message);
     }
 }
-function verifTchat($pdo, $userId){
+function verifTchatBinaire($pdo, $userId){
     try{
         $query = " SELECT * FROM users_tchats natural join tchats where userId = :userIdConnected and tchatId in (SELECT tchatId FROM users_tchats where userId = :userId) and tchatType = 'binaire'";
         $selectAllUsers = $pdo->prepare($query);
         $selectAllUsers ->execute([
             'userIdConnected' => $_SESSION['user']->userId,
             'userId' => $userId
+        ]);
+        $tchat = $selectAllUsers -> fetch();
+        return $tchat;
+    }catch(PDOException $e){
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+function verifTchatGrp($pdo, $tchatId){
+    try{
+        $query = " SELECT * FROM users_tchats natural join tchats where userId = :userIdConnected and tchatId in (SELECT tchatId FROM users_tchats where tchatId = :tchatId) and tchatType = 'groupe'";
+        $selectAllUsers = $pdo->prepare($query);
+        $selectAllUsers ->execute([
+            'userIdConnected' => $_SESSION['user']->userId,
+            'tchatId' => $tchatId
         ]);
         $tchat = $selectAllUsers -> fetch();
         return $tchat;

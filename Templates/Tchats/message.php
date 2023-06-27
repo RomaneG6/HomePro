@@ -18,7 +18,7 @@
     <div class="text-center">
         <div class="login">             
             <label for="message" class="message">
-                <input type="text" placeholder="Votre message..." class="form" id="Message" name="message" required> 
+                <input type="text" placeholder="Ecrire..." class="form" id="Message" name="message" required> 
                 <?php if(isset($messError["message"])) :?><small><?= $messError["message"] ?></small><?php endif ?> 
             </label>
         </div>

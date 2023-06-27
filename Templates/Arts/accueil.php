@@ -15,11 +15,10 @@
                 <div>
                     <img src="<?= $art-> artImg ?>" alt="imgArt">
                     <div class="info">
-                        <h3><span><?= $art-> artNom ?></span></h3>
+                        <h3><span><a class="linTitre" href="/voirArt?artId=<?= $art-> artId?>"><?= $art->artNom ?></a></span></h3>
                         <h3><span><?= $art-> artPrix?>€</span></h3>
                     </div>
                 </div>
-                <a class="linAd" href="/voirArt?artId=" . <?= $art-> artId?>>voir le contenu</a>
             </button>
         <?php endforeach ?>
     </div>

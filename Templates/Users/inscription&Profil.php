@@ -12,7 +12,7 @@
                     <input type="text" class="forms" id="Nom" name="nom" value="<?= $_SESSION['user']-> userNom ?>"> 
                 </div>
                 <div>
-                    <input type="email" class="forms" id="Email" name="email" <?php if(isset($_POST['btnInscr'])) : ?>disabled<?php endif ?> value="<?= $_SESSION['user']-> userEmail ?>"> 
+                    <input type="email" class="forms" id="Email" name="email" <?php if(isset($_POST['btnInscr'])) : ?><?php endif ?> value="<?= $_SESSION['user']-> userEmail ?>"> 
                 </div>
                 <div>
                     <input type="text" class="forms" id="Ville" name="ville" value="<?= $_SESSION['user']-> userVille ?>">  
@@ -24,7 +24,7 @@
             <?php else : ?>
                 <div class="flexSup">
                     <div class="row">
-                        <img class="image" src="img/<?= $_SESSION['user']->userPP ?>" alt="imgProfil"><!-- user => voir connectUser function -->
+                        <img class="image" src="<?= $_SESSION['user']->userPP ?>" alt="imgProfil"><!-- user => voir connectUser function -->
                         <div class="column">
                             <h3><?= $_SESSION['user']-> userLogin ?></h3>
                             <button name="btnInscr" class="btnInscr" value="Envoyer">Modify</button>

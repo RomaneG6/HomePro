@@ -47,26 +47,18 @@ elseif ($uri === "/profil")
     }
     require_once "Templates/Users/inscription&Profil.php";
 }
-elseif ($uri === "/voirArt") {
-    require_once "Templates/Arts/voirArt.php";
-}
 elseif ($uri === "/deleteProfil") {
     deleteAllArtsFromUser($pdo);
     deleteUser($pdo);
     session_destroy();
     header('location:/connexion');
 }
-elseif ($uri === "/createArt") {
-    $options = selectAllOptions($pdo);
-    $types = selectAllTypes($pdo);
-    require_once "Templates/Arts/edithOrCreateArt.php";
-}
-elseif ($uri === "/createOption") {
+/*elseif ($uri === "/createOption") {
     require_once "Templates/Options/createOption.php";
 }
 elseif ($uri === "/createType") {
     require_once "Templates/Options/createType.php";
-}
+}*/
 
 function VerifEmpty()
 {

@@ -60,7 +60,7 @@ function updateSession($pdo){
         $query = "Select * from users where userId = :userId";
         $selectUser = $pdo->prepare($query);
         $selectUser->execute([
-            'userId' => $_SESSION['user']-> userId,//name de l'input Login
+            'userId' => $_SESSION['user']-> userId//name de l'input Login
         ]);
         $user = $selectUser -> fetch();
         $_SESSION['user'] = $user;
