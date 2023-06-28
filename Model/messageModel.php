@@ -31,3 +31,16 @@ function addMessage($pdo, $messageDate, $messageHeure, $tchatId, $userId){
         die($message);
     }
 }
+function UpdateMessage($pdo, $messageId){
+    try{
+        $query = "Update messages set messageText = :messageText where messageId = :messageId";
+        $updateMessage = $pdo->prepare($query);
+        $updateMessage->execute([
+            'messageText' => 'ce message a été supprimé',
+            'messageId' => $messageId
+        ]);
+    }catch(PDOException $e){
+        $message = $e->getMessage();
+        die($message);
+    }
+}

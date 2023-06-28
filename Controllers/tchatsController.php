@@ -11,10 +11,11 @@ if ($uri === "/tchat")
         addTchat($pdo, 'groupe');
         $tchatId = $pdo->lastInsertId();
         for ($i=0; $i < count($_POST['users']); $i++) { 
-            $userId = count($_POST['users'])[$i];
+            $userId = $_POST['users'][$i];
             addUsersTchat($pdo, $tchatId, $userId);
         }
-        header('location:/voirMessages?tchatId=' . $_GET['tchatId']);
+        addUsersTchat($pdo, $tchatId, $_SESSION['user']->userId);
+        header('location:/voirMessages?tchatId=' . $tchatId);
     }
     require_once "Templates/Tchats/tchat.php";
 }
@@ -41,7 +42,7 @@ elseif(isset($_GET["userId"]) && $uri === "/voirMessages?userId=" . $_GET["userI
 }
 elseif(isset($_GET['tchatId']) && $uri === "/voirMessages?tchatId=" . $_GET['tchatId']) {
     $tchat = verifTchatGrp($pdo, $_GET['tchatId']);
-    if (!empty($messages)) {
+    if (!empty($tchat)) {
         $messages = selectAllMessages($pdo, $tchat->tchatId);
     }
     if(isset($_POST['btnEnvoi'])) {
@@ -49,8 +50,13 @@ elseif(isset($_GET['tchatId']) && $uri === "/voirMessages?tchatId=" . $_GET['tch
         if (!$messError){
             $messageDate = date('d-m-y');
             $messageHeure = date('h:i:s');
-            addMessage($pdo, $messageDate, $messageHeure, $tchat->tchatId, $_SESSION['user']->userId);// ?? Qu'est ce que ca change de mettre $tchat->tchatId ou $_GET['tchatId']
+            addMessage($pdo, $messageDate, $messageHeure, $tchat->tchatId, $_SESSION['user']->userId);
         }
     }
     require_once "Templates/Tchats/message.php";
+}
+elseif(isset($_GET["messageId"]) && $uri === "/deleteMessage?messageId=" . $_GET['messageId']){
+    UpdateMessage($pdo, $_GET['messageId']);
+    header('location:/tchat');
+    
 }

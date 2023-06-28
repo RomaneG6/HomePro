@@ -6,7 +6,7 @@
 <?php else : ?>
     <?php foreach ($messages as $message) : ?>
         <div class="info">
-            <h3><span><?= $message-> messageText ?></span></h3>
+            <h3><span><?= $message-> messageText ?></span><span><a href="/<?php if( $message->messageText === "ce message a été supprimé"): ?>deleteMessage<?php else : ?>updateMessage<?php endif ?>?messageId=<?=$message->messageId ?>"><img class="linkSup" src="img/CiconPoub.png" alt="iconSup"></a></span></h3>
             <div class="flex-message">
                 <p><span><?= $message-> messageDate?></span></p>
                 <p><span><?= $message-> messageHeure?></span></p>

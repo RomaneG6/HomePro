@@ -40,8 +40,8 @@ function connectUser($pdo){
 function updateUser($pdo){
     try{
         $query = "Update users set userPrenom = :userPrenom, userNom = :userNom, userPP = :userPP, userEmail = :userEmail, userVille = :userVille, userPassWord = :userPassWord where userId = :userId"; //nom des colonnes de user
-        $addUser = $pdo->prepare($query);
-        $addUser->execute([
+        $updateUser = $pdo->prepare($query);
+        $updateUser->execute([
             'userPrenom' => $_POST['prenom'],//name de l'input First Name
             'userNom' => $_POST['nom'],
             'userPP' => $_POST['image'],

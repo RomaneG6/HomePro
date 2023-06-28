@@ -2,7 +2,7 @@
 
 function selectAllUsersSaufConnect($pdo){
     try{
-        $query = "Select * from users WHERE NOT userId = :userId;";
+        $query = "Select * from users WHERE userId != :userId;";
         $selectAllUsers = $pdo->prepare($query);
         $selectAllUsers ->execute([
             'userId' => $_SESSION['user']->userId
@@ -72,7 +72,7 @@ function verifTchatBinaire($pdo, $userId){
 }
 function verifTchatGrp($pdo, $tchatId){
     try{
-        $query = " SELECT * FROM users_tchats natural join tchats where userId = :userIdConnected and tchatId in (SELECT tchatId FROM users_tchats where tchatId = :tchatId) and tchatType = 'groupe'";
+        $query = "SELECT * FROM users_tchats natural join tchats where userId = :userIdConnected and tchatId in (SELECT tchatId FROM users_tchats where tchatId = :tchatId) and tchatType = 'groupe'";
         $selectAllUsers = $pdo->prepare($query);
         $selectAllUsers ->execute([
             'userIdConnected' => $_SESSION['user']->userId,
